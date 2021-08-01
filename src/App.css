@@ -1,0 +1,28 @@
+body {
+  font-family: "Staatliches", cursive;
+}
+h1 {
+  text-align: center;
+  color: white;
+  font-family: "Staatliches", cursive;
+  letter-spacing: 0.3rem;
+  font-size: 3.5rem;
+}
+
+.buttons {
+  text-align: center;
+}
+
+.buttons button {
+  margin: 0 1rem;
+  border-radius: 2rem;
+  border: none;
+  outline: none;
+  font-size: 1.8rem;
+  padding: 1rem;
+  background-color: black;
+  letter-spacing: 0.1rem;
+  color: white;
+  cursor: pointer;
+  font-family: "Staatliches", cursive;
+}
