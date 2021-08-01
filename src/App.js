@@ -1,4 +1,5 @@
 import "./App.css";
+import RandomGif from "./components/RandomGif";
 function App() {
   return (
     <div>
@@ -7,6 +8,7 @@ function App() {
         <button>RANDOM</button>
         <button>SEARCH</button>
       </div>
+      <RandomGif />
     </div>
   );
 }
