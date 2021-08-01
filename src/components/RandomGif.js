@@ -1,19 +1,24 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-const API_KEY = process.env.API_KEY;
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 const RandomGif = () => {
+  const [gif, setGif] = useState(null);
   useEffect(() => {
-    const fetchGif = async () => {
-      const url = `https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}`;
+    const fetchData = async () => {
+      const url = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}`;
       const { data } = await axios.get(url);
-      console.log(data);
+      setGif(data.data.images.downsized_large.url);
     };
-
-    fetchGif();
+    fetchData();
   }, []);
-  return <div></div>;
+
+  return (
+    <div>
+      <img src={gif} />
+    </div>
+  );
 };
 
 export default RandomGif;
