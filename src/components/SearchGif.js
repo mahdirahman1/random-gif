@@ -1,10 +1,8 @@
 import axios from "axios";
 import React, { Fragment, useEffect, useState } from "react";
-import { GifWrapper, SearchWrapper, StyledInput } from "./gif.styled";
+import { GifWrapper, SearchWrapper, StyledInput, Error } from "./gif.styled";
 import { Button } from "./button.styled";
 import useGif from "../hooks/useGif";
-
-const API_KEY = process.env.REACT_APP_API_KEY;
 
 const SearchGif = () => {
   const [search, setSearch] = useState("");
@@ -30,10 +28,14 @@ const SearchGif = () => {
         />
       </SearchWrapper>
       <GifWrapper>
-        {error && <h2>{error}</h2>}
-        <img width="500" height="300" src={gif} />
-        <div>
-          <Button onClick={fetchGif}>{`Show me another ${search} gif`}</Button>
+        {error && <Error>{error}</Error>}
+        {!error && <img width="500" height="300" src={gif} />}
+        <div className="error">
+          {!error && search && (
+            <Button
+              onClick={fetchGif}
+            >{`Show me another ${search} gif`}</Button>
+          )}
         </div>
       </GifWrapper>
     </Fragment>

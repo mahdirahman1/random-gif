@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-const Footer = styled.div`
-  left: 0;
-  bottom: 0;
-  width: 100%;
+const Footer = styled.footer`
   background-color: black;
-  color: white;
   text-align: center;
+  padding-top: 0.5rem;
+  margin-top: auto;
+  bottom: 0;
+  height: 2rem;
+  width: 100%;
 `;
 
 export default Footer;

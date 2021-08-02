@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 export const GifWrapper = styled.div`
   text-align: center;
-  margin: 3rem 0;
+  margin: 2rem 0;
+  min-height: 100%;
+  padding-bottom: 2.5rem;
 `;
 
 export const SearchWrapper = styled.div`
@@ -21,4 +23,14 @@ export const StyledInput = styled.input`
   letter-spacing: 0.1rem;
   font-size: 1.5rem;
   outline: none;
+`;
+
+export const Error = styled.h2`
+  margin: 5rem 0;
+  text-align: center;
+  padding: 0.4rem;
+  font-family: "Staatliches", cursive;
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+  color: white;
 `;
