@@ -1,23 +1,17 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-
-const API_KEY = process.env.REACT_APP_API_KEY;
+import { Button } from "./button.styled";
+import { GifWrapper } from "./gif.styled";
+import useGif from "../hooks/useGif";
 
 const RandomGif = () => {
-  const [gif, setGif] = useState(null);
-  useEffect(() => {
-    const fetchData = async () => {
-      const url = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}`;
-      const { data } = await axios.get(url);
-      setGif(data.data.images.downsized_large.url);
-    };
-    fetchData();
-  }, []);
-
+  const { gif, fetchGif, error } = useGif();
   return (
-    <div>
-      <img src={gif} />
-    </div>
+    <GifWrapper>
+      {error && <p>{error}</p>}
+      <img width="500" height="300" src={gif} />
+      <div>
+        <Button onClick={fetchGif}>Show me another</Button>
+      </div>
+    </GifWrapper>
   );
 };
 
