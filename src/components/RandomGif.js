@@ -1,5 +1,5 @@
 import { Button } from "./button.styled";
-import { GifWrapper } from "./gif.styled";
+import { GifWrapper, Error } from "./gif.styled";
 import useGif from "../hooks/useGif";
 
 const RandomGif = () => {
