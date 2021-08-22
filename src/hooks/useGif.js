@@ -34,7 +34,7 @@ const useGif = (searchTerm) => {
   };
   useEffect(() => {
     fetchGif(searchTerm);
-  }, []);
+  }, [searchTerm]);
 
   return { gif, fetchGif, error };
 };

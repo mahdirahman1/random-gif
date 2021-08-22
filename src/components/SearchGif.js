@@ -33,7 +33,7 @@ const SearchGif = () => {
         <div className="error">
           {!error && search && (
             <Button
-              onClick={fetchGif}
+              onClick={() => fetchGif(search)}
             >{`Show me another ${search} gif`}</Button>
           )}
         </div>
